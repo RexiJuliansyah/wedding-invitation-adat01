@@ -116,7 +116,7 @@ export default function GiftSection() {
         {/* Bottom Separator Ornament */}
         <div className="flex items-center justify-center gap-3 mt-6 w-full max-w-[340px]">
           <div className="flex-1 h-[1px] bg-[#B8860B]/50" />
-          <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="" className="w-10 opacity-80" />
+          <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="" className="w-10 opacity-80" loading="lazy" />
           <div className="flex-1 h-[1px] bg-[#B8860B]/50" />
         </div>
       </div>

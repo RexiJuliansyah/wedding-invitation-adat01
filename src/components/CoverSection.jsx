@@ -17,15 +17,14 @@ export default function CoverSection({ onOpen }) {
       <div className="absolute inset-0 bg-white/40"></div>
 
       {/* Frame Ornaments */}
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Atas.png" alt="Ornamen" className="absolute top-0 left-0 w-32 md:w-40 opacity-90 z-10" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Atas.png" alt="Ornamen" className="absolute top-0 right-0 w-32 md:w-40 opacity-90 z-10 transform -scale-x-100" />
+      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Atas.png" alt="Ornamen" className="absolute top-0 left-0 w-32 md:w-40 opacity-90 z-10" loading="eager" />
+      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Atas.png" alt="Ornamen" className="absolute top-0 right-0 w-32 md:w-40 opacity-90 z-10 transform -scale-x-100" loading="eager" />
 
-      <img src="/assets/Adat-Aceh-Ornamen-Bawah-pendek.jpg" alt="Ornamen Bawah" className="absolute bottom-0 left-0 w-full h-24 object-cover opacity-90 z-10 mix-blend-multiply hidden" />
 
       {/* Assuming Adat-Aceh-Ornamen-Kiri-Bawah exists, we place it */}
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png" alt="Ornamen" className="absolute -bottom-2 left-0 w-40 opacity-90 z-10" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png" alt="Ornamen" className="absolute -bottom-2 right-0 w-40 opacity-90 z-10 transform -scale-x-100" />
-      <img src="/assets/Adat-Aceh-Ornamen-Bawah-Tengah.png" alt="Ornamen" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[240px] z-30 drop-shadow-xs" />
+      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png" alt="Ornamen" className="absolute -bottom-2 left-0 w-40 opacity-90 z-10" loading="lazy" />
+      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png" alt="Ornamen" className="absolute -bottom-2 right-0 w-40 opacity-90 z-10 transform -scale-x-100" loading="lazy" />
+      <img src="/assets/Adat-Aceh-Ornamen-Bawah-Tengah.png" alt="Ornamen" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[240px] z-30 drop-shadow-xs" loading="lazy" />
       {/* Main Content inside Cover */}
       <motion.div
         className="relative z-20 flex flex-col items-center text-center w-full px-6"
@@ -35,8 +34,8 @@ export default function CoverSection({ onOpen }) {
       >
         {/* Top Logo / Crest */}
         <div className="flex flex-col items-center mb-6">
-          <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="Flower Ornament" className="w-12 mb-2" />
-          <img src="/assets/Adat-Aceh-Pinto-Aceh-1.png" alt="Crest Pintu Aceh" className="w-32 drop-shadow-md" />
+          <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="Flower Ornament" className="w-12 mb-2" loading="eager" />
+          <img src="/assets/Adat-Aceh-Pinto-Aceh-1.png" alt="Crest Pintu Aceh" className="w-32 drop-shadow-md" loading="eager" />
         </div>
 
         <p className="font-serif tracking-widest text-[16px] text-[#B8860B] mb-2 uppercase">The Wedding Of</p>

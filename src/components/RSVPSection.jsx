@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
+import SectionFrame from './SectionFrame';
 import GoldButton from './GoldButton';
 
 export default function RSVPSection() {
@@ -35,8 +36,7 @@ export default function RSVPSection() {
     <section className="pt-20 pb-48 px-4 relative z-10 w-full max-w-[500px] mx-auto overflow-hidden text-center bg-transparent">
 
       {/* Top Corner Ornaments */}
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Atas.png" alt="" className="absolute top-0 left-0  w-32 md:w-36 opacity-100 z-10" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Atas.png" alt="" className="absolute top-0 right-0 w-32 md:w-36 opacity-100 z-10 -scale-x-100" />
+      <SectionFrame showBottom={false} showBottomCenter={false} />
 
       <div className="relative z-20">
         <motion.div
@@ -191,9 +191,7 @@ export default function RSVPSection() {
       </div>
 
       {/* Bottom Corner Ornaments */}
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png"   alt="" className="absolute bottom-0 left-0  w-32 md:w-36 opacity-100 z-10" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png"   alt="" className="absolute bottom-0 right-0 w-32 md:w-36 opacity-100 z-10 -scale-x-100" />
-      <img src="/assets/Adat-Aceh-Ornamen-Bawah-Tengah.png" alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[240px] z-30 drop-shadow-xs" />
+      <SectionFrame showTop={false} />
     </section>
   );
 }

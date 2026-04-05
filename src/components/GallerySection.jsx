@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
+import SectionFrame from './SectionFrame';
 
 const images = [
   '/assets/Adat-Aceh-foto-1.jpg',
@@ -84,10 +85,7 @@ export default function GallerySection() {
         </div>
       </motion.div>
 
-      {/* Bottom Ornaments */}
-      <img src="/assets/Adat-Aceh-Ornamen-Bawah-Tengah.png" alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[240px] z-30 drop-shadow-xs" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png" alt="" className="absolute bottom-0 left-0  w-32 md:w-36 opacity-90 z-10" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png" alt="" className="absolute bottom-0 right-0 w-32 md:w-36 opacity-90 z-10 -scale-x-100" />
+      <SectionFrame showTop={false} />
 
       {/* Lightbox */}
       <AnimatePresence>

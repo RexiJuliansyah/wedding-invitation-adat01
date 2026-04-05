@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Instagram, Youtube } from 'lucide-react';
+import SectionFrame from './SectionFrame';
 import GoldButton from './GoldButton';
 
 // TikTok SVG icon (not in lucide)
@@ -16,7 +17,7 @@ export default function StreamingSection() {
       {/* Top Separator Ornament */}
       <div className="flex items-center gap-3 mb-10 w-full max-w-[340px]">
         <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#B8860B]/60" />
-        <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="" className="w-10 opacity-80" />
+        <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="" className="w-10 opacity-80" loading="lazy" />
         <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#B8860B]/60" />
       </div>
 
@@ -71,16 +72,16 @@ export default function StreamingSection() {
         className="space-y-2.5"
       >
         {[
-          { icon: Instagram, label: 'Instagram', handle: '@igmempelai',      color: '#E1306C', href: 'https://instagram.com/igmempelai'  },
-          { icon: TikTokIcon, label: 'TikTok',   handle: '@tiktokmempelai',  color: '#010101', href: 'https://tiktok.com/@tiktokmempelai' },
-          { icon: Youtube,   label: 'YouTube',   handle: 'youtubemempelai',  color: '#FF0000', href: 'https://youtube.com/@youtubemempelai' },
+          { icon: Instagram, label: 'Instagram', handle: '@igmempelai', color: '#E1306C', href: 'https://instagram.com/igmempelai' },
+          { icon: TikTokIcon, label: 'TikTok', handle: '@tiktokmempelai', color: '#010101', href: 'https://tiktok.com/@tiktokmempelai' },
+          { icon: Youtube, label: 'YouTube', handle: 'youtubemempelai', color: '#FF0000', href: 'https://youtube.com/@youtubemempelai' },
         ].map(({ icon: Icon, label, handle, color, href }) => (
           <a
             key={label}
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-5 py-2 rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-md"
+            className="flex items-center gap-3 px-5 py-2 rounded-xl transition-all duration-200 hover:scale-105 hover:shadow-md"
             style={{ background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(184,134,11,0.2)' }}
           >
             <span style={{ color }}><Icon size={16} /></span>
@@ -91,9 +92,7 @@ export default function StreamingSection() {
       </motion.div>
 
       {/* Bottom Corner Ornaments */}
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png"   alt="" className="absolute bottom-0 left-0  w-32 md:w-36 opacity-90 z-10" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png"   alt="" className="absolute bottom-0 right-0 w-32 md:w-36 opacity-90 z-10 -scale-x-100" />
-      <img src="/assets/Adat-Aceh-Ornamen-Bawah-Tengah.png" alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[240px] z-30 drop-shadow-xs" />
+      <SectionFrame showTop={false} />
     </section>
   );
 }

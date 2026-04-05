@@ -22,7 +22,7 @@ export default function BrandedFooter() {
         {/* Separator ornament */}
         <div className="flex items-center gap-3 w-full max-w-[280px] mb-8">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#B8860B]/50" />
-          <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="" className="w-8 opacity-60" />
+          <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="" className="w-8 opacity-60" loading="lazy" />
           <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#B8860B]/50" />
         </div>
 
@@ -49,6 +49,7 @@ export default function BrandedFooter() {
             alt="Letare Invitation"
             className="w-[180px] h-auto object-contain mx-auto"
             style={{ filter: 'drop-shadow(0 2px 8px rgba(184,134,11,0.15))' }}
+            loading="lazy"
           />
 
           {/* Gold bottom accent */}

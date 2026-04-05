@@ -17,6 +17,13 @@
     background-repeat: no-repeat;
     background-position: center;
   }
+
+  .bg-ornament-divider {
+    background-image: url('/assets/Adat-Aceh-Ornamen-Divider.png');
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    background-position: center;
+  }
   
   .title-serif {
     @apply font-serif font-semibold;

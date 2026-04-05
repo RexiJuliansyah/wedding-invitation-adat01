@@ -20,7 +20,7 @@ export default function QuotesSection() {
           className="p-8"
         >
           {/* Corner ornament top-left */}
-          <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="" className="w-10 mx-auto mb-4 opacity-60" />
+          <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="" className="w-10 mx-auto mb-4 opacity-60" loading="lazy" />
 
           {/* Arabic text */}
           <p
@@ -44,7 +44,7 @@ export default function QuotesSection() {
           <p className="font-serif font-bold text-[#B8860B] text-[14px] tracking-wide">Q.S. Ar-Rum : 21</p>
 
           {/* Bottom ornament */}
-          <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="" className="w-8 mx-auto mt-5 opacity-50" />
+          <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="" className="w-8 mx-auto mt-5 opacity-50" loading="lazy" />
         </div>
 
         {/* Gold bottom accent */}

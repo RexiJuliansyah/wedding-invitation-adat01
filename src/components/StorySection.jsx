@@ -54,13 +54,13 @@ export default function StorySection() {
                     <p className="text-gray-700 text-[11px] leading-relaxed whitespace-pre-line">{story.text}</p>
                   </div>
                   <div className="w-[110px] h-[110px] shrink-0 rounded-full overflow-hidden shadow-[0_8px_15px_-3px_rgba(0,0,0,0.3)] border-[3px] border-white/60">
-                    <img src={story.img} alt={story.title} className="w-full h-full object-cover" />
+                    <img src={story.img} alt={story.title} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                 </>
               ) : (
                 <>
                   <div className="w-[110px] h-[110px] shrink-0 rounded-full overflow-hidden shadow-[0_8px_15px_-3px_rgba(0,0,0,0.3)] border-[3px] border-white/60">
-                    <img src={story.img} alt={story.title} className="w-full h-full object-cover" />
+                    <img src={story.img} alt={story.title} className="w-full h-full object-cover" loading="lazy" />
                   </div>
                   <div className="flex-1 text-left">
                     <h3 className="font-serif font-bold text-gray-800 text-[15px] mb-1">{story.title}</h3>
@@ -78,7 +78,7 @@ export default function StorySection() {
         {/* Top Separator Ornament */}
         <div className="flex items-center justify-center gap-3 mb-10 w-full max-w-[340px]">
           <div className="flex-1 h-[1px] bg-[#B8860B]/50"></div>
-          <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="Ornamen" className="w-10 opacity-80" />
+          <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="Ornamen" className="w-10 opacity-80" loading="lazy" />
           <div className="flex-1 h-[1px] bg-[#B8860B]/50"></div>
         </div>
       </div>

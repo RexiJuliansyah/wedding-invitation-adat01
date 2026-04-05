@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { CalendarDays, MapPin, Clock } from 'lucide-react';
+import useCountdown from '../hooks/useCountdown';
 import GoldButton from './GoldButton';
+import SectionFrame from './SectionFrame';
 
 const countdownUnits = [
   { key: 'days',    label: 'Hari'   },
@@ -26,31 +27,13 @@ const events = [
 ];
 
 export default function EventSection() {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-
-  useEffect(() => {
-    const target = new Date('Feb 20, 2027 08:00:00').getTime();
-    const tick = () => {
-      const d = target - Date.now();
-      if (d < 0) return;
-      setTimeLeft({
-        days:    Math.floor(d / 86400000),
-        hours:   Math.floor((d % 86400000) / 3600000),
-        minutes: Math.floor((d % 3600000)  / 60000),
-        seconds: Math.floor((d % 60000)    / 1000),
-      });
-    };
-    tick();
-    const id = setInterval(tick, 1000);
-    return () => clearInterval(id);
-  }, []);
+  const timeLeft = useCountdown('Feb 20, 2027 08:00:00');
 
   return (
     <section className="pt-20 pb-28 px-4 relative z-10 w-full max-w-[500px] mx-auto overflow-hidden bg-transparent">
 
       {/* Top Ornaments */}
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Atas.png" alt="" className="absolute top-0 left-0  w-32 md:w-36 opacity-90 z-10" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Atas.png" alt="" className="absolute top-0 right-0 w-32 md:w-36 opacity-90 z-10 -scale-x-100" />
+      <SectionFrame showBottom={false} showBottomCenter={false} />
 
       <motion.div
         className="flex flex-col items-center relative z-20 w-full mb-8"
@@ -58,7 +41,7 @@ export default function EventSection() {
         transition={{ duration: 1 }} viewport={{ once: true }}
       >
         <h2 className="title-script text-5xl text-[#B8860B] drop-shadow-sm mb-1">Detail Acara</h2>
-        <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="" className="w-10 opacity-70 mt-2" />
+        <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="" className="w-10 opacity-70 mt-2" loading="lazy" />
       </motion.div>
 
       <div className="w-full flex flex-col items-center space-y-5 relative z-20">
@@ -128,9 +111,7 @@ export default function EventSection() {
       </div>
 
       {/* Bottom Ornaments */}
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png"   alt="" className="absolute bottom-0 left-0  w-32 md:w-36 opacity-90 z-10" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png"   alt="" className="absolute bottom-0 right-0 w-32 md:w-36 opacity-90 z-10 -scale-x-100" />
-      <img src="/assets/Adat-Aceh-Ornamen-Bawah-Tengah.png" alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[240px] z-30 drop-shadow-xs" />
+      <SectionFrame showTop={false} />
     </section>
   );
 }

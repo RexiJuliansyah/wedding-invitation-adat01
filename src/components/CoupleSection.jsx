@@ -1,31 +1,30 @@
 import { motion } from 'framer-motion';
+import SectionFrame from './SectionFrame';
+
+const people = [
+  {
+    name: 'Riska Kirana',
+    role: 'Putri Pertama dari',
+    parents: 'Bpk. & Ibu',
+    photo: '/assets/Adat-Aceh-foto-cwe.jpg',
+    side: 'bride',
+  },
+  {
+    name: 'Ilham Basyrul',
+    role: 'Putra Pertama dari',
+    parents: 'Bpk. & Ibu',
+    photo: '/assets/Adat-Aceh-foto-cwo.jpg',
+    side: 'groom',
+  },
+];
 
 export default function CoupleSection() {
-  const people = [
-    {
-      name: 'Riska Kirana',
-      role: 'Putri Pertama dari',
-      parents: 'Bpk. & Ibu',
-      photo: '/assets/Adat-Aceh-foto-cwe.jpg',
-      side: 'bride',
-    },
-    {
-      name: 'Ilham Basyrul',
-      role: 'Putra Pertama dari',
-      parents: 'Bpk. & Ibu',
-      photo: '/assets/Adat-Aceh-foto-cwo.jpg',
-      side: 'groom',
-    },
-  ];
 
   return (
     <section className="pt-20 pb-44 text-center relative z-10 w-full max-w-[500px] mx-auto overflow-hidden">
 
       {/* Corner Ornaments */}
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Atas.png"  alt="" className="absolute top-0 left-0  w-32 md:w-36 opacity-90 z-10" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Atas.png"  alt="" className="absolute top-0 right-0 w-32 md:w-36 opacity-90 z-10 -scale-x-100" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png" alt="" className="absolute bottom-0 left-0  w-32 md:w-36 opacity-90 z-10" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png" alt="" className="absolute bottom-0 right-0 w-32 md:w-36 opacity-90 z-10 -scale-x-100" />
+      <SectionFrame showBottomCenter={false} />
 
       {/* Greeting */}
       <motion.div
@@ -69,6 +68,7 @@ export default function CoupleSection() {
               src="/assets/Adat-Aceh-Frame-2-1.png"
               alt="Frame"
               className="absolute w-[115%] h-[115%] object-contain pointer-events-none drop-shadow-md z-10"
+              loading="lazy"
             />
           </div>
           <h2 className="title-script text-[2rem] leading-none text-[#B8860B] mb-1 drop-shadow-sm">Riska Kirana</h2>
@@ -83,7 +83,7 @@ export default function CoupleSection() {
           animate={{ scale: [1, 1.12, 1] }}
           transition={{ repeat: Infinity, duration: 3, ease: 'easeInOut' }}
         >
-          <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="" className="w-8 mb-1 opacity-70" />
+          <img src="/assets/Adat-Aceh-Ornamen-Tengah.png" alt="" className="w-8 mb-1 opacity-70" loading="lazy" />
           <span className="title-script text-4xl text-[#B8860B]">&amp;</span>
         </motion.div>
 
@@ -107,6 +107,7 @@ export default function CoupleSection() {
               src="/assets/Adat-Aceh-Frame-2-1.png"
               alt="Frame"
               className="absolute w-[115%] h-[115%] object-contain pointer-events-none drop-shadow-md z-10"
+              loading="lazy"
             />
           </div>
           <h2 className="title-script text-[2rem] leading-none text-[#B8860B] mb-1 drop-shadow-sm">Ilham Basyrul</h2>
@@ -117,11 +118,7 @@ export default function CoupleSection() {
       </motion.div>
 
       {/* Bottom Ornament */}
-      <img
-        src="/assets/Adat-Aceh-Ornamen-Bawah-Tengah.png"
-        alt=""
-        className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[200px] z-20 drop-shadow-xs"
-      />
+      <SectionFrame showTop={false} showBottom={false} showBottomCenter={true} />
     </section>
   );
 }

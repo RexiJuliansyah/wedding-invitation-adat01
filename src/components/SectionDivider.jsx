@@ -14,15 +14,7 @@ export default function SectionDivider({ shadow = 'none' }) {
   return (
     <div className={`relative w-full h-[50px] md:h-[60px] pointer-events-none bg-batik ${shadowClass}`}>
       {/* Pattern Layer dengan mix blend */}
-      <div
-        className="absolute inset-0 w-full h-full opacity-80 mix-blend-multiply"
-        style={{
-          backgroundImage: "url('/assets/Adat-Aceh-Ornamen-Divider.png')",
-          backgroundSize: "auto 100%",
-          backgroundRepeat: "repeat-x",
-          backgroundPosition: "center"
-        }}
-      />
+      <div className="absolute inset-0 w-full h-full opacity-80 mix-blend-multiply bg-ornament-divider" />
     </div>
   );
 }

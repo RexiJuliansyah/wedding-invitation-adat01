@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { CalendarDays } from 'lucide-react';
+import useCountdown from '../hooks/useCountdown';
 import GoldButton from './GoldButton';
+import SectionFrame from './SectionFrame';
 
 const countdownUnits = [
   { key: 'days', label: 'Hari' },
@@ -11,22 +12,7 @@ const countdownUnits = [
 ];
 
 export default function HeroSection() {
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-
-  useEffect(() => {
-    const targetDate = new Date('Feb 20, 2027 08:00:00').getTime();
-    const interval = setInterval(() => {
-      const distance = targetDate - Date.now();
-      if (distance < 0) { clearInterval(interval); return; }
-      setTimeLeft({
-        days: Math.floor(distance / 86400000),
-        hours: Math.floor((distance % 86400000) / 3600000),
-        minutes: Math.floor((distance % 3600000) / 60000),
-        seconds: Math.floor((distance % 60000) / 1000),
-      });
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
+  const timeLeft = useCountdown('Feb 20, 2027 08:00:00');
 
   const handleSaveDate = () => {
     const googleCalUrl =
@@ -42,11 +28,7 @@ export default function HeroSection() {
     <section className="relative flex flex-col items-center justify-center pt-16 pb-28 px-4 overflow-hidden w-full max-w-[500px] mx-auto min-h-[100vh]">
 
       {/* Frame Ornaments */}
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Atas.png" alt="" className="absolute top-0 left-0  w-32 md:w-40 opacity-90 z-10" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Atas.png" alt="" className="absolute top-0 right-0 w-32 md:w-40 opacity-90 z-10 -scale-x-100" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png" alt="" className="absolute bottom-0 left-0  w-32 md:w-36 opacity-90 z-10" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png" alt="" className="absolute bottom-0 right-0 w-32 md:w-36 opacity-90 z-10 -scale-x-100" />
-      <img src="/assets/Adat-Aceh-Ornamen-Bawah-Tengah.png" alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[240px] z-30 drop-shadow-xs" />
+      <SectionFrame isFirstSection={true} />
 
       {/* Main Content */}
       <motion.div
