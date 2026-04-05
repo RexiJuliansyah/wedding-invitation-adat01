@@ -47,9 +47,9 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center w-full font-sans">
       {/* Mobile Wrapper for Desktop */}
-      <div className="w-full max-w-[500px] min-h-screen relative shadow-2xl overflow-x-hidden pb-20">
+      <div className="w-full max-w-[500px] min-h-screen relative shadow-2xl overflow-x-hidden pb-20 isolate">
         {/* Anti-Jumping Fixed Background */}
-        <div className="fixed inset-0 w-full max-w-[500px] mx-auto bg-batik pointer-events-none -z-10"></div>
+        <div className="fixed top-0 bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[500px] bg-batik pointer-events-none z-0"></div>
 
 
         <AnimatePresence>
