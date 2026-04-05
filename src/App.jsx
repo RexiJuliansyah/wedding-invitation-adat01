@@ -47,7 +47,10 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-100 flex justify-center w-full font-sans">
       {/* Mobile Wrapper for Desktop */}
-      <div className="w-full max-w-[500px] min-h-screen relative shadow-2xl overflow-x-hidden pb-20 bg-batik bg-fixed">
+      <div className="w-full max-w-[500px] min-h-screen relative shadow-2xl overflow-x-hidden pb-20">
+        {/* Anti-Jumping Fixed Background */}
+        <div className="fixed inset-0 w-full max-w-[500px] mx-auto bg-batik pointer-events-none -z-10"></div>
+
 
         <AnimatePresence>
           {!isOpened && <CoverSection onOpen={handleOpen} />}

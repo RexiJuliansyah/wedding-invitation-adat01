@@ -9,7 +9,7 @@ export default function CoverSection({ onOpen }) {
 
   return (
     <motion.div
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-batik bg-fixed overflow-hidden w-full max-w-[500px] mx-auto min-h-[100vh]"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden w-full max-w-[500px] mx-auto min-h-[100vh]"
       initial={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: '-100%', transition: { duration: 1, ease: "easeInOut" } }}
     >
