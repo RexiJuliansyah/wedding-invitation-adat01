@@ -4,10 +4,10 @@ import { CalendarDays } from 'lucide-react';
 import GoldButton from './GoldButton';
 
 const countdownUnits = [
-  { key: 'days',    label: 'Hari'   },
-  { key: 'hours',   label: 'Jam'    },
-  { key: 'minutes', label: 'Menit'  },
-  { key: 'seconds', label: 'Detik'  },
+  { key: 'days', label: 'Hari' },
+  { key: 'hours', label: 'Jam' },
+  { key: 'minutes', label: 'Menit' },
+  { key: 'seconds', label: 'Detik' },
 ];
 
 export default function HeroSection() {
@@ -19,10 +19,10 @@ export default function HeroSection() {
       const distance = targetDate - Date.now();
       if (distance < 0) { clearInterval(interval); return; }
       setTimeLeft({
-        days:    Math.floor(distance / 86400000),
-        hours:   Math.floor((distance % 86400000) / 3600000),
-        minutes: Math.floor((distance % 3600000)  / 60000),
-        seconds: Math.floor((distance % 60000)    / 1000),
+        days: Math.floor(distance / 86400000),
+        hours: Math.floor((distance % 86400000) / 3600000),
+        minutes: Math.floor((distance % 3600000) / 60000),
+        seconds: Math.floor((distance % 60000) / 1000),
       });
     }, 1000);
     return () => clearInterval(interval);
@@ -42,10 +42,10 @@ export default function HeroSection() {
     <section className="relative flex flex-col items-center justify-center pt-16 pb-28 px-4 overflow-hidden w-full max-w-[500px] mx-auto min-h-[100vh]">
 
       {/* Frame Ornaments */}
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Atas.png"   alt="" className="absolute top-0 left-0  w-32 md:w-40 opacity-90 z-10" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Atas.png"   alt="" className="absolute top-0 right-0 w-32 md:w-40 opacity-90 z-10 -scale-x-100" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png"  alt="" className="absolute bottom-0 left-0  w-32 md:w-36 opacity-90 z-10" />
-      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png"  alt="" className="absolute bottom-0 right-0 w-32 md:w-36 opacity-90 z-10 -scale-x-100" />
+      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Atas.png" alt="" className="absolute top-0 left-0  w-32 md:w-40 opacity-90 z-10" />
+      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Atas.png" alt="" className="absolute top-0 right-0 w-32 md:w-40 opacity-90 z-10 -scale-x-100" />
+      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png" alt="" className="absolute bottom-0 left-0  w-32 md:w-36 opacity-90 z-10" />
+      <img src="/assets/Adat-Aceh-Ornamen-Kiri-Bawah.png" alt="" className="absolute bottom-0 right-0 w-32 md:w-36 opacity-90 z-10 -scale-x-100" />
       <img src="/assets/Adat-Aceh-Ornamen-Bawah-Tengah.png" alt="" className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[240px] z-30 drop-shadow-xs" />
 
       {/* Main Content */}
@@ -56,6 +56,13 @@ export default function HeroSection() {
         transition={{ duration: 1 }}
         viewport={{ once: true }}
       >
+        {/* Text Group */}
+        <div className="mt-2 mb-6">
+          <p className="font-serif tracking-widest text-[14px] text-[#B8860B] mb-1 uppercase">The Wedding Of</p>
+          <h1 className="font-script text-[3.8rem] text-[#B8860B] mb-3 leading-none drop-shadow-sm">Ilham &amp; Riska</h1>
+          <p className="font-serif font-medium text-[15px] text-[#B8860B]">Sabtu, 20 Februari 2027</p>
+        </div>
+
         {/* Photo in Frame */}
         <div className="relative w-[300px] h-[340px] flex items-center justify-center mb-6">
           <img
@@ -75,13 +82,6 @@ export default function HeroSection() {
             alt="Frame Emas"
             className="absolute w-full h-full object-contain pointer-events-none drop-shadow-lg z-10"
           />
-        </div>
-
-        {/* Text Group */}
-        <div className="mt-2 mb-6">
-          <p className="font-serif tracking-widest text-[14px] text-[#B8860B] mb-1 uppercase">The Wedding Of</p>
-          <h1 className="font-script text-[3.8rem] text-[#B8860B] mb-3 leading-none drop-shadow-sm">Ilham &amp; Riska</h1>
-          <p className="font-serif font-medium text-[15px] text-[#B8860B]">Sabtu, 20 Februari 2027</p>
         </div>
 
         {/* Save The Date + Countdown */}
